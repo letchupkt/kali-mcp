@@ -143,7 +143,7 @@ PRs welcome. If you add tools or workflows, include tests and updated docs. Plea
 
 ## Author & Contact
 
-**Lakshmikanthan (Letchu)** 
+Lakshmikanthan (Letchu)
 GitHub: `letchupkt`
 Portfolio: [https://letchupkt.netlify.app](https://letchupkt.vgrow.tech)
 Instagram: [@letchu_pkt](https://instagram.com/letchu_pkt)
