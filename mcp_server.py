@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-
-# This script connect the MCP AI agent to Kali Linux terminal and API Server.
-
-# some of the code here was inspired from https://github.com/whit3rabbit0/project_astro , be sure to check them out
-
 import sys
 import os
 import argparse
