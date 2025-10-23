@@ -1,148 +1,150 @@
 # MCP Kali Server
 
-**Kali MCP Server** is a lightweight API bridge that connects MCP Clients (e.g: Claude Desktop, [5ire](https://github.com/nanbingxyz/5ire)) to the API server which allows excuting commands on a Linux terminal.
-
-This allows the MCP to run terminal commands like `nmap`, `nxc` or any other tool, interact with web applications using tools like `curl`, `wget`, `gobuster`. 
- And perform **AI-assisted penetration testing**, solving **CTF web challenge** in real time, helping in **solving machines from HTB or THM**.
-
-## My Medium Article on This Tool
-
-[![How MCP is Revolutionizing Offensive Security](https://miro.medium.com/v2/resize:fit:828/format:webp/1*g4h-mIpPEHpq_H63W7Emsg.png)](https://yousofnahya.medium.com/how-mcp-is-revolutionizing-offensive-security-93b2442a5096)
-
-👉 [**How MCP is Revolutionizing Offensive Security**](https://yousofnahya.medium.com/how-mcp-is-revolutionizing-offensive-security-93b2442a5096)
+**Kali MCP Server** — by **Lakshmikanthan (Letchu)** — GitHub: `letchupkt`
+Lightweight API bridge that connects MCP Clients (examples: Claude Desktop, [5ire](https://github.com/nanbingxyz/5ire)) to a Kali Linux terminal. It enables MCPs to execute terminal commands, interact with web applications, and run AI-assisted offensive security workflows.
 
 ---
 
-## 🔍 Use Case
+## 🔍 Overview
 
-The goal is to enable AI-driven offensive security testing by:
+Kali MCP Server exposes a controlled API that allows authorized MCP clients to remotely run commands (e.g. `nmap`, `curl`, `gobuster`) and receive structured output. The project is designed to accelerate automated penetration testing, CTF solving, and AI-driven reconnaissance by combining Kali tooling with local or remote LLMs.
 
-- Letting the MCP interact with AI endpoints like OpenAI, Claude, DeepSeek, or any other models.
-- Exposing an API to execute commands on a Kali machine.
-- Using AI to suggest and run terminal commands to solve CTF challenges or automate recon/exploitation tasks.
-- Allowing MCP apps to send custom requests (e.g., `curl`, `nmap`, `ffuf`, etc.) and receive structured outputs.
+Use-cases include:
 
-Here are some example for my testing (I used google's AI `gemini 2.0 flash`)
-
-### Example solving my web CTF challenge in RamadanCTF
-https://github.com/user-attachments/assets/dc93b71d-9a4a-4ad5-8079-2c26c04e5397
-
-### Trying to solve machine "code" from HTB
-https://github.com/user-attachments/assets/3ec06ff8-0bdf-4ad5-be71-2ec490b7ee27
-
+* AI-assisted penetration testing and bug hunting.
+* Solving web CTF challenges in real time (useful for HTB/THM/CTF practice).
+* Orchestrating recon/exploit chains through a single MCP interface.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🧠 **AI Endpoint Integration**: Connect your kali to any MCP of your liking such as claude desktop or 5ier.
-- 🖥️ **Command Execution API**: Exposes a controlled API to execute terminal commands on your Kali Linux machine.
-- 🕸️ **Web Challenge Support**: AI can interact with websites and APIs, capture flags via `curl` and any other tool AI the needs.
-- 🔐 **Designed for Offensive Security Professionals**: Ideal for red teamers, bug bounty hunters, or CTF players automating common tasks.
-- 🎯 **Comprehensive Bug Hunting Arsenal**: Includes 25+ specialized tools for reconnaissance, vulnerability scanning, and exploitation.
-
-### 🛠️ Integrated Tools
-
-**Reconnaissance & Subdomain Enumeration:**
-- `subfinder` - Fast subdomain discovery
-- `sublist3r` - Subdomain enumeration using OSINT
-- `amass` - Network mapping and attack surface discovery
-- `assetfinder` - Find domains and subdomains
-
-**Subdomain Takeover Detection:**
-- `subzy` - Subdomain takeover vulnerability checker
-- `subjack` - Subdomain takeover tool
-
-**HTTP Analysis & Probing:**
-- `httpx` - Fast HTTP toolkit for probing
-- `katana` - Web crawler for spidering websites
-- `gospider` - Fast web spider
-
-**Content & Directory Discovery:**
-- `gobuster` - Directory/file & DNS busting tool
-- `dirb` - Web content scanner
-- `ffuf` - Fast web fuzzer
-- `feroxbuster` - Fast content discovery tool
-- `dirsearch` - Web path scanner
-
-**Vulnerability Scanning:**
-- `nuclei` - Vulnerability scanner with templates
-- `nikto` - Web server scanner
-- `wpscan` - WordPress vulnerability scanner
-- `dalfox` - XSS scanner and parameter analysis
-
-**Parameter & URL Discovery:**
-- `arjun` - HTTP parameter discovery
-- `paramspider` - Parameter mining from web archives
-- `waybackurls` - Fetch URLs from Wayback Machine
-- `gau` - Get All URLs from multiple sources
-- `gf` - Grep-like tool for filtering with patterns
-
-**Port Scanning:**
-- `nmap` - Network discovery and security auditing
-- `masscan` - High-speed port scanner
-- `rustscan` - Fast port scanner
-
-**Password & Authentication:**
-- `hydra` - Password cracking tool
-- `john` - John the Ripper password cracker
-- `sqlmap` - SQL injection detection and exploitation
-
-**Network Enumeration:**
-- `enum4linux` - Windows/Samba enumeration tool
+* 🧠 **AI Endpoint Integration** — connect the Kali host to any MCP or LLM endpoint (OpenAI, Claude, DeepSeek, or other local models).
+* 🖥️ **Command Execution API** — run terminal tools remotely and get structured responses.
+* 🕸️ **Web Challenge & CTF Support** — AI agents can interact with target web apps (via `curl`, `wget`, fuzzers) and attempt to capture flags or findings.
+* 🔐 **Built for Offensive Security Practitioners** — red teamers, bug bounty hunters and CTF players in mind.
+* 🎯 **Large Toolset** — ships with (or can install) 25+ specialized tools for reconnaissance, scanning, and exploitation.
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Integrated Tools
 
-### On your Linux Machine (Will act as MCP Server)
+**Recon & Subdomain Discovery:** `subfinder`, `sublist3r`, `amass`, `assetfinder`
+**Subdomain Takeover:** `subzy`, `subjack`
+**HTTP Probing & Crawling:** `httpx`, `katana`, `gospider`
+**Content / Dir Discovery:** `gobuster`, `dirb`, `ffuf`, `feroxbuster`, `dirsearch`
+**Vuln Scanners:** `nuclei`, `nikto`, `wpscan`, `dalfox`
+**Param / URL Discovery:** `arjun`, `paramspider`, `waybackurls`, `gau`, `gf`
+**Port Scanners:** `nmap`, `masscan`, `rustscan`
+**Auth / Passwords:** `hydra`, `john`, `sqlmap`
+**Network Enumeration:** `enum4linux`
+
+> This list is configurable — tools can be added/removed depending on your Kali environment and permitted scope.
+
+---
+
+## 🛠️ Quick Install (Kali host)
+
 ```bash
-git clone https://github.com/Wh0am123/MCP-Kali-Server.git
-cd MCP-Kali-Server
+# clone the project
+git clone https://github.com/letchupkt/kali-mcp.git
+cd kali-mcp
 
-# Install all required tools (run this first!)
+# make installer executable and run it (installs tools)
 chmod +x install_tools.sh
 sudo ./install_tools.sh
 
-# Start the server
+# start the server
 python3 kali_server.py
 ```
 
-### On your MCP Client (You can run on Windows or Linux)
-- You will want to run `python3 /absolute/path/to/mcp_server.py http://LINUX_IP:5000`
+**Note:** `install_tools.sh` will try to install many common pentest binaries. Inspect it and run it inside a VM or disposable Kali box if you prefer.
 
-#### Configuration for claude desktop:
-edit (C:\Users\USERNAME\AppData\Roaming\Claude\claude_desktop_config.json)
+---
+
+## 🖥️ Client Configuration (MCP Clients)
+
+Clients simply invoke the MCP script with the Kali host URL. Example command used by MCP clients:
+
+```bash
+python3 /absolute/path/to/mcp_server.py http://LINUX_IP:5000
+```
+
+### Claude Desktop
+
+Edit `%APPDATA%\Claude\claude_desktop_config.json` and add an MCP entry:
 
 ```json
 {
-    "mcpServers": {
-        "kali_mcp": {
-            "command": "python3",
-            "args": [
-                "/absolute/path/to/mcp_server.py",
-                "--server",
-                "http://LINUX_IP:5000/"
-            ]
-        }
+  "mcpServers": {
+    "kali_mcp": {
+      "command": "python3",
+      "args": [
+        "/absolute/path/to/mcp_server.py",
+        "--server",
+        "http://LINUX_IP:5000/"
+      ]
     }
+  }
 }
 ```
 
-#### Configuration for [5ire](https://github.com/nanbingxyz/5ire) Desktop Application:
-- Simply add an MCP with the command `python3 /absolute/path/to/mcp_server.py http://LINUX_IP:5000` and it will automatically generate the needed configuration files.
+### 5ire Desktop
+
+Add an MCP using the same `python3 /absolute/path/to/mcp_server.py http://LINUX_IP:5000` command — 5ire will generate the needed configuration automatically.
+
+---
+
+## 🧩 Example Workflows
+
+1. **CTF Web Challenge (high-level):**
+
+   * Client sends challenge URL + scope to MCP.
+   * MCP runs `httpx`/`gobuster`/`ffuf` and returns parsed results.
+   * Model suggests follow-up fuzzing or `sqlmap` commands.
+   * Operator reviews and executes exploit steps, MCP logs outputs.
+
+2. **HTB-like Machine (non-destructive recon):**
+
+   * Run `nmap`/`rustscan` then `enum4linux` for SMB.
+   * Save and store findings in local vector DB for the AI to reason over.
+
+---
+
+## ⚙️ Suggested Architecture & Safety
+
+* **Orchestration layer**: Use a small Python service to call system tools and normalize outputs to JSON.
+* **RAG & State**: Store scan results and evidence in a local DB (e.g., SQLite + FAISS) and pass concise context to the LLM.
+* **Sandboxing**: Run scans/exploits inside VMs/containers with strict network egress control.
+* **Authorization checks**: Add a required authorization token and a pre-flight scope/consent checklist for every automated run.
+
+---
+
+## 🔒 Legal & Ethical Notice
+
+**Only run this server against systems you own or explicitly have written authorization to test.** Automated pentesting can cause service disruption and legal consequences. This repository is intended for education, defensive research, and authorized testing only.
+
+---
 
 ## 🔮 Other Possibilities
 
-There are more possibilites than described since the AI model can now execute commands on the terminal. Here are some example:
+* Memory forensics with Volatility (automated workflows).
+* Disk forensics (SleuthKit / timelines / carving).
+* Integration with alerting pipelines (Slack, Signal, email) for findings.
+* Local LLM orchestration (run quantized LLMs for on-device reasoning — tell me your hardware and I can recommend exact models and setup commands).
 
-- Memory forensics using Volatility
-  - Automating memory analysis tasks such as process enumeration, DLL injection checks, and registry extraction from memory dumps.
+---
 
-- Disk forensics with SleuthKit
-  - Automating analysis from disk images, timeline generation, file carving, and hash comparisons.
+## Contributing
 
+PRs welcome. If you add tools or workflows, include tests and updated docs. Please keep contributions scoped to legal, ethical tooling.
 
-## ⚠️ Disclaimer:
-This project is intended solely for educational and ethical testing purposes. Any misuse of the information or tools provided — including unauthorized access, exploitation, or malicious activity — is strictly prohibited.
-The author assumes no responsibility for misuse.
+---
+
+## Author & Contact
+
+**Lakshmikanthan (Letchu)** — GitHub: `letchupkt`
+Portfolio: [https://letchupkt.netlify.app](https://letchupkt.vgrow.tech)
+Instagram: [@letchu_pkt](https://instagram.com/letchu_pkt)
+---
+
