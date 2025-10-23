@@ -30,13 +30,21 @@ Use-cases include:
 ## 🛠️ Integrated Tools
 
 **Recon & Subdomain Discovery:** `subfinder`, `sublist3r`, `amass`, `assetfinder`
+
 **Subdomain Takeover:** `subzy`, `subjack`
+
 **HTTP Probing & Crawling:** `httpx`, `katana`, `gospider`
+
 **Content / Dir Discovery:** `gobuster`, `dirb`, `ffuf`, `feroxbuster`, `dirsearch`
+
 **Vuln Scanners:** `nuclei`, `nikto`, `wpscan`, `dalfox`
+
 **Param / URL Discovery:** `arjun`, `paramspider`, `waybackurls`, `gau`, `gf`
+
 **Port Scanners:** `nmap`, `masscan`, `rustscan`
+
 **Auth / Passwords:** `hydra`, `john`, `sqlmap`
+
 **Network Enumeration:** `enum4linux`
 
 > This list is configurable — tools can be added/removed depending on your Kali environment and permitted scope.
@@ -144,8 +152,12 @@ PRs welcome. If you add tools or workflows, include tests and updated docs. Plea
 ## Author & Contact
 
 Lakshmikanthan (Letchu)
+
 GitHub: `letchupkt`
-Portfolio: [https://letchupkt.netlify.app](https://letchupkt.vgrow.tech)
+
+Portfolio: [https://letchupkt.vgrow.tech](https://letchupkt.vgrow.tech)
+
 Instagram: [@letchu_pkt](https://instagram.com/letchu_pkt)
+
 ---
 
