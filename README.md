@@ -849,6 +849,10 @@ If you find this project useful, please consider giving it a star on GitHub!
 - **v1.0.0** - Initial MCP Kali Server release
 
 ---
+<iframe src="https://github.com/sponsors/letchupkt/card" title="Sponsor letchupkt" height="225" width="600" style="border: 0;"></iframe>
+---
+
+
 
 **🎯 Happy Bug Hunting!**
 
