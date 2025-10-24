@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Kali Linux Bug Hunting Tools Installation Script
-# This script installs all the tools required for the MCP Kali Server
+# Enhanced Kali Linux Bug Hunting Tools Installation Script
+# Author: LAKSHMIKANTHAN K (letchupkt)
+# This script installs all the tools required for the Enhanced MCP Kali Server
+# © 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server
 
 echo "🔧 Installing Bug Hunting Tools for MCP Kali Server..."
 echo "=================================================="

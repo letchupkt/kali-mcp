@@ -1,4 +1,7 @@
-# MCP Kali Server - Usage Guide
+# Enhanced MCP Kali Server - Usage Guide
+
+**Author: LAKSHMIKANTHAN K (letchupkt)**  
+**© 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
 
 This guide provides examples of how to use the enhanced MCP Kali Server with AI for bug hunting and penetration testing.
 

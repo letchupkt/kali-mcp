@@ -1,5 +1,7 @@
-#!/usr/bin/env python3
-
+# Enhanced Kali Linux API Server - Bug Hunting Arsenal
+# Author: LAKSHMIKANTHAN K (letchupkt)
+# Enhanced with 25+ security tools for comprehensive bug hunting and penetration testing
+# © 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server
 
 import argparse
 import json
@@ -25,7 +27,12 @@ logger = logging.getLogger(__name__)
 # Configuration
 API_PORT = int(os.environ.get("API_PORT", 5000))
 DEBUG_MODE = os.environ.get("DEBUG_MODE", "0").lower() in ("1", "true", "yes", "y")
-COMMAND_TIMEOUT = 180  # 5 minutes default timeout
+COMMAND_TIMEOUT = 600  # 10 minutes default timeout for comprehensive scans
+
+# Timeout Strategy:
+# - Default tools: 10 minutes (600 seconds)
+# - Long-running tools (nuclei, amass, masscan, nmap, ffuf, feroxbuster): 15 minutes (900 seconds)
+# - This accommodates comprehensive scans while preventing indefinite hangs
 
 app = Flask(__name__)
 
@@ -34,7 +41,11 @@ class CommandExecutor:
     
     def __init__(self, command: str, timeout: int = COMMAND_TIMEOUT):
         self.command = command
-        self.timeout = timeout
+        # Increase timeout for specific long-running tools
+        if any(tool in command.lower() for tool in ['nuclei', 'amass', 'masscan', 'nmap', 'ffuf', 'feroxbuster']):
+            self.timeout = max(timeout, 900)  # 15 minutes for comprehensive scans
+        else:
+            self.timeout = timeout
         self.process = None
         self.stdout_data = ""
         self.stderr_data = ""
@@ -1194,5 +1205,13 @@ if __name__ == "__main__":
     if args.port != API_PORT:
         API_PORT = args.port
     
-    logger.info(f"Starting Kali Linux Tools API Server on port {API_PORT}")
+    print("\n" + "=" * 70)
+    print("🚀 ENHANCED KALI LINUX API SERVER - BUG HUNTING ARSENAL")
+    print("👨‍💻 Author: LAKSHMIKANTHAN K (letchupkt)")
+    print("© 2025 LAKSHMIKANTHAN K (letchupkt)")
+    print("=" * 70)
+    logger.info(f"Starting Enhanced Kali Linux Tools API Server on port {API_PORT}")
+    logger.info("25+ Security tools ready for bug hunting and penetration testing")
+    print("=" * 70)
+    
     app.run(host="0.0.0.0", port=API_PORT, debug=DEBUG_MODE)

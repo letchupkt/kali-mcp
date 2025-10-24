@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+
+# Enhanced MCP Kali Server - Bug Hunting Arsenal
+# Author: LAKSHMIKANTHAN K (letchupkt)
+# This script connects the MCP AI agent to Kali Linux terminal and API Server.
+# Enhanced with 25+ bug hunting and reconnaissance tools
+
+# Some of the original code was inspired from https://github.com/whit3rabbit0/project_astro
+# Enhanced and expanded by LAKSHMIKANTHAN K (letchupkt)
+
+# © 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server
+
 import sys
 import os
 import argparse
@@ -19,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 # Default configuration
 DEFAULT_KALI_SERVER = "http://localhost:5000" # change to your linux IP
-DEFAULT_REQUEST_TIMEOUT = 300  # 5 minutes default timeout for API requests
+DEFAULT_REQUEST_TIMEOUT = 600  # 10 minutes default timeout for API requests
 
 class KaliToolsClient:
     """Client for communicating with the Kali Linux Tools API Server"""

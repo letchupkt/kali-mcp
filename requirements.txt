@@ -1,5 +1,11 @@
-Flask==2.3.3
-requests==2.31.0
-Werkzeug==2.3.7
-psutil==5.9.5
-ollama==0.1.5 
+# Core MCP Server Requirements
+flask>=2.3.0
+requests>=2.31.0
+mcp>=1.0.0
+
+# Ollama Client Requirements  
+ollama>=0.1.7
+
+# Optional: Enhanced logging and utilities
+colorama>=0.4.6
+rich>=13.0.0
