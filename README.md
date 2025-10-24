@@ -1,4 +1,4 @@
-# Enhanced MCP Kali Server - Bug Hunting Arsenal
+#  MCP Kali Server - Bug Hunting Arsenal
 
 **Author: LAKSHMIKANTHAN K (letchupkt)**  
 
@@ -21,7 +21,7 @@
 
 ## 🌟 Overview
 
-**Enhanced Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 25+ professional security tools through multiple AI interfaces.
+** Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 25+ professional security tools through multiple AI interfaces.
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp.git
 
@@ -219,7 +219,7 @@ ollama pull llama3.2
 # or for better performance:
 ollama pull codellama:13b
 
-# Start the enhanced Ollama client
+# Start the  Ollama client
 python3 ollama_client.py --kali-server http://KALI_IP:5000 --model llama3.2
 ```
 
@@ -773,7 +773,7 @@ The author assumes **no responsibility** for misuse of this software. Users are 
 
 *Remember: With great power comes great responsibility. Use these tools ethically and legally.*
 
-**© 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
+**© 2025 LAKSHMIKANTHAN K (letchupkt) -  MCP Kali Server**
 ---
 
 
