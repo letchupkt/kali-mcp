@@ -1,7 +1,6 @@
 # Enhanced MCP Kali Server - Bug Hunting Arsenal
 
 **Author: LAKSHMIKANTHAN K (letchupkt)**  
-**© 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
 
 ---
 
@@ -41,14 +40,6 @@
 - **CTF Challenges**: Real-time problem solving with AI guidance
 - **Red Team Operations**: Streamlined attack surface mapping and exploitation
 - **Security Research**: Rapid prototyping and testing of security concepts
-
-### 🎬 Demo Videos
-
-#### Example solving web CTF challenge in RamadanCTF
-https://github.com/user-attachments/assets/dc93b71d-9a4a-4ad5-8079-2c26c04e5397
-
-#### Solving HTB machine "code"
-https://github.com/user-attachments/assets/3ec06ff8-0bdf-4ad5-be71-2ec490b7ee27
 
 ---
 
@@ -865,4 +856,3 @@ If you find this project useful, please consider giving it a star on GitHub!
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp  
 **👨‍💻 Author**: LAKSHMIKANTHAN K (letchupkt)  
-**© 2024 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
