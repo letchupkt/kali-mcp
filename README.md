@@ -1,7 +1,6 @@
-# Enhanced MCP Kali Server - Bug Hunting Arsenal
+# MCP Kali Server - Bug Hunting Arsenal
 
 **Author: LAKSHMIKANTHAN K (letchupkt)**  
-**© 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
 
 ---
 
@@ -22,7 +21,7 @@
 
 ## 🌟 Overview
 
-**Enhanced Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 55+ professional security tools through multiple AI interfaces.
+** Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 55+ professional security tools through multiple AI interfaces.
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp.git
 
@@ -157,7 +156,7 @@ python3 kali_server.py
 👨‍💻 Author: LAKSHMIKANTHAN K (letchupkt)
 © 2025 LAKSHMIKANTHAN K (letchupkt)
 ======================================================================
-INFO:__main__:Starting Enhanced Kali Linux Tools API Server on port 5000
+INFO:__main__:Starting  Kali Linux Tools API Server on port 5000
 INFO:__main__:25+ Security tools ready for bug hunting and penetration testing
 ======================================================================
  * Running on all addresses (0.0.0.0)
@@ -185,7 +184,7 @@ INFO:__main__:25+ Security tools ready for bug hunting and penetration testing
    ```json
    {
        "mcpServers": {
-           "enhanced_kali_mcp": {
+           "kali_mcp": {
                "command": "python3",
                "args": [
                    "/absolute/path/to/mcp_server.py",
@@ -232,7 +231,7 @@ ollama pull llama3.2
 # or for better performance:
 ollama pull codellama:13b
 
-# Start the enhanced Ollama client
+# Start the  Ollama client
 python3 ollama_client.py --kali-server http://KALI_IP:5000 --model llama3.2
 ```
 
@@ -1131,7 +1130,7 @@ If you find this project useful, please consider giving it a star on GitHub!
 ## 🔄 Updates and Roadmap
 
 ### Recent Updates
-- ✅ Enhanced MCP server with 55+ security tools
+- ✅  MCP server with 55+ security tools
 - ✅ Added 30+ new tools including DNSx, Naabu, TLSx, Uncover, and more
 - ✅ Direct Ollama integration
 - ✅ Comprehensive documentation
