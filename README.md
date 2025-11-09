@@ -1,4 +1,5 @@
 # MCP Kali Server - Bug Hunting Arsenal
+<img width="1700" height="460" alt="github-header-banner (3)" src="https://github.com/user-attachments/assets/ac2f4455-2e4d-4adf-a731-fee891d4a8f6" />
 
 **Author: LAKSHMIKANTHAN K (letchupkt)**  
 
@@ -21,7 +22,7 @@
 
 ## 🌟 Overview
 
-** Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 55+ professional security tools through multiple AI interfaces.
+**Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 55+ professional security tools through multiple AI interfaces.
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp.git
 
