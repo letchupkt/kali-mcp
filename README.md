@@ -1,6 +1,7 @@
-#  MCP Kali Server - Bug Hunting Arsenal
+# Enhanced MCP Kali Server - Bug Hunting Arsenal
 
 **Author: LAKSHMIKANTHAN K (letchupkt)**  
+**© 2025 LAKSHMIKANTHAN K (letchupkt) - Enhanced MCP Kali Server**
 
 ---
 
@@ -21,7 +22,7 @@
 
 ## 🌟 Overview
 
-** Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 25+ professional security tools through multiple AI interfaces.
+**Enhanced Kali MCP Server** is a revolutionary AI-powered cybersecurity platform that bridges the gap between artificial intelligence and penetration testing. This comprehensive system provides direct integration with 55+ professional security tools through multiple AI interfaces.
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp.git
 
@@ -41,6 +42,14 @@
 - **Red Team Operations**: Streamlined attack surface mapping and exploitation
 - **Security Research**: Rapid prototyping and testing of security concepts
 
+### 🎬 Demo Videos
+
+#### Example solving web CTF challenge in RamadanCTF
+https://github.com/user-attachments/assets/dc93b71d-9a4a-4ad5-8079-2c26c04e5397
+
+#### Solving HTB machine "code"
+https://github.com/user-attachments/assets/3ec06ff8-0bdf-4ad5-be71-2ec490b7ee27
+
 ---
 
 ## 🚀 Features
@@ -53,7 +62,7 @@
 - **Result Analysis**: AI interprets and explains tool outputs
 
 ### 🛡️ Security Arsenal
-- **25+ Professional Tools**: Industry-standard security testing utilities
+- **55+ Professional Tools**: Industry-standard security testing utilities
 - **Real-time Execution**: Direct command execution with live output streaming
 - **Comprehensive Coverage**: From reconnaissance to exploitation
 - **Automated Workflows**: Chain multiple tools for complete assessments
@@ -118,11 +127,15 @@ sudo ./install_tools.sh
 
 **What gets installed:**
 - **Go Environment**: Required for modern security tools
-- **Subdomain Tools**: subfinder, sublister, amass, assetfinder
-- **HTTP Tools**: httpx, katana, gospider
-- **Content Discovery**: ffuf, feroxbuster, dirsearch
-- **Vulnerability Scanners**: nuclei, nikto, wpscan, dalfox
-- **Port Scanners**: masscan, rustscan
+- **Subdomain Tools**: subfinder, sublister, amass, assetfinder, chaos, shosubgo, github-subdomains
+- **DNS Tools**: dnsx, shuffledns, puredns, alterx
+- **HTTP Tools**: httpx, tlsx, katana, gospider, hakrawler
+- **Content Discovery**: ffuf, feroxbuster, dirsearch, gobuster, dirb
+- **Vulnerability Scanners**: nuclei, nikto, wpscan, dalfox, crlfuzz
+- **Port Scanners**: masscan, rustscan, naabu
+- **URL Discovery**: waybackurls, gau, gauplus
+- **Parameter Tools**: arjun, paramspider, qsreplace
+- **Utility Tools**: notify, interactsh, anew, unfurl, gf, mapcidr, cdncheck, asnmap, uncover
 - **And many more...**
 
 ### Step 3: Install Python Dependencies
@@ -140,7 +153,7 @@ python3 kali_server.py
 **Expected Output:**
 ```
 ======================================================================
-🚀 ENHANCED KALI LINUX API SERVER - BUG HUNTING ARSENAL
+🚀 KALI LINUX API SERVER - BUG HUNTING ARSENAL
 👨‍💻 Author: LAKSHMIKANTHAN K (letchupkt)
 © 2025 LAKSHMIKANTHAN K (letchupkt)
 ======================================================================
@@ -219,21 +232,21 @@ ollama pull llama3.2
 # or for better performance:
 ollama pull codellama:13b
 
-# Start the  Ollama client
+# Start the enhanced Ollama client
 python3 ollama_client.py --kali-server http://KALI_IP:5000 --model llama3.2
 ```
 
 **Interactive Session:**
 ```
 ======================================================================
-🚀 ENHANCED KALI MCP SERVER - BUG HUNTING ARSENAL
+🚀  KALI MCP SERVER - BUG HUNTING ARSENAL
 👨‍💻 Author: LAKSHMIKANTHAN K (letchupkt)
 © 2025 LAKSHMIKANTHAN K (letchupkt)
 ======================================================================
 🤖 Model: llama3.2
 🔗 Kali Server: http://192.168.1.100:5000
 ======================================================================
-🎯 Enhanced Bug Hunting Arsenal Ready!
+🎯  Bug Hunting Arsenal Ready!
 📋 Type 'help' to see available tools and examples
 🔧 Type 'tools' to list all available security tools
 ❌ Type 'exit' or 'quit' to end the session
@@ -338,6 +351,7 @@ HTTP probing, content discovery, and vulnerability scanning"
 1. **Crawling & Spidering**
    - `katana -u https://webapp.com`
    - `gospider -s https://webapp.com`
+   - `hakrawler -url https://webapp.com`
 
 2. **Parameter Discovery**
    - `arjun -u https://webapp.com`
@@ -345,8 +359,96 @@ HTTP probing, content discovery, and vulnerability scanning"
 
 3. **Vulnerability Testing**
    - `dalfox url https://webapp.com` (XSS)
+   - `crlfuzz -u https://webapp.com` (CRLF)
    - `sqlmap -u https://webapp.com/page?id=1` (SQLi)
    - `nuclei -u https://webapp.com -t web-vulnerabilities`
+
+### Workflow 4: Advanced DNS & Infrastructure Mapping
+
+**AI Prompt:**
+```
+"Perform comprehensive DNS enumeration and infrastructure mapping for target.com"
+```
+
+**Execution Flow:**
+1. **Passive Subdomain Discovery**
+   - `subfinder -d target.com`
+   - `chaos -d target.com`
+   - `github-subdomains -d target.com`
+
+2. **Active DNS Bruteforcing**
+   - `shuffledns -d target.com -w wordlist.txt`
+   - `puredns bruteforce wordlist.txt target.com`
+
+3. **DNS Resolution & Validation**
+   - `dnsx -l subdomains.txt -resp -a -cname`
+   - `alterx -l subdomains.txt | dnsx`
+
+4. **Infrastructure Analysis**
+   - `tlsx -l subdomains.txt -san -cn`
+   - `cdncheck -l subdomains.txt`
+   - `asnmap -d target.com`
+   - `mapcidr -cidr 192.168.1.0/24`
+
+### Workflow 5: Fast Port Scanning & Service Detection
+
+**AI Prompt:**
+```
+"Scan target.com for open ports and identify running services"
+```
+
+**Execution Flow:**
+1. **Fast Port Discovery**
+   - `naabu -host target.com -top-ports 1000`
+   - `rustscan -a target.com`
+
+2. **Comprehensive Port Scan**
+   - `masscan target.com -p1-65535 --rate=10000`
+
+3. **Service Detection**
+   - `nmap -sCV -p 80,443,8080 target.com`
+   - `httpx -l ports.txt -title -tech-detect`
+
+### Workflow 6: URL Discovery & Analysis
+
+**AI Prompt:**
+```
+"Discover all historical URLs and endpoints for target.com"
+```
+
+**Execution Flow:**
+1. **Historical URL Discovery**
+   - `echo "target.com" | waybackurls`
+   - `echo "target.com" | gau`
+   - `echo "target.com" | gauplus`
+
+2. **URL Parsing & Filtering**
+   - `cat urls.txt | unfurl domains`
+   - `cat urls.txt | unfurl paths`
+   - `cat urls.txt | gf xss`
+
+3. **Parameter Manipulation**
+   - `cat urls.txt | qsreplace "FUZZ"`
+   - `cat urls.txt | anew unique_urls.txt`
+
+### Workflow 7: Search Engine Reconnaissance
+
+**AI Prompt:**
+```
+"Use search engines to discover exposed assets for target.com"
+```
+
+**Execution Flow:**
+1. **Multi-Engine Search**
+   - `uncover -q "target.com" -e shodan,censys,fofa`
+   - `shosubgo -d target.com -s SHODAN_KEY`
+
+2. **Result Processing**
+   - `cat results.txt | httpx -title -status-code`
+   - `cat results.txt | naabu -top-ports 100`
+
+3. **Notification**
+   - `echo "Scan complete!" | notify -provider slack`
 
 ---
 
@@ -475,6 +577,204 @@ HTTP probing, content discovery, and vulnerability scanning"
 - **Purpose**: Modern fast port scanner
 - **Usage**: `rustscan -a 192.168.1.1`
 - **Features**: Fast scanning, Nmap integration
+
+#### Naabu
+- **Purpose**: Fast port scanner written in Go
+- **Usage**: `naabu -host example.com`
+- **Features**: SYN/CONNECT scan, fast enumeration, Nmap integration
+
+### 🌐 DNS Enumeration & Resolution
+
+#### DNSx
+- **Purpose**: Fast and multi-purpose DNS toolkit
+- **Usage**: `echo "example.com" | dnsx -resp`
+- **Features**: DNS resolution, wildcard filtering, multiple record types
+
+#### ShuffleDNS
+- **Purpose**: Wrapper around massdns for DNS bruteforcing
+- **Usage**: `shuffledns -d example.com -w wordlist.txt`
+- **Features**: Active bruteforce, wildcard handling, fast resolution
+
+#### PureDNS
+- **Purpose**: Fast domain resolver and subdomain bruteforcing
+- **Usage**: `puredns bruteforce wordlist.txt example.com`
+- **Features**: Accurate resolution, wildcard detection, bruteforce
+
+#### Alterx
+- **Purpose**: Fast and customizable subdomain wordlist generator
+- **Usage**: `echo "example.com" | alterx`
+- **Features**: Pattern-based generation, permutation engine
+
+### 🔐 TLS/SSL & Certificate Analysis
+
+#### TLSx
+- **Purpose**: Fast TLS data grabber with support for multiple TLS probes
+- **Usage**: `echo "example.com" | tlsx`
+- **Features**: Certificate extraction, cipher enumeration, version detection
+
+### 🔎 Search Engine Integration
+
+#### Uncover
+- **Purpose**: Discover exposed hosts using multiple search engines
+- **Usage**: `uncover -q "example.com" -e shodan,censys`
+- **Features**: Multi-engine support (Shodan, Censys, Fofa), API integration
+
+#### Shosubgo
+- **Purpose**: Subdomain enumeration using Shodan API
+- **Usage**: `shosubgo -d example.com -s API_KEY`
+- **Features**: Shodan integration, fast enumeration
+
+#### Chaos
+- **Purpose**: Subdomain discovery using ProjectDiscovery's Chaos dataset
+- **Usage**: `chaos -d example.com`
+- **Features**: Passive enumeration, large dataset
+
+### 🔧 Utility & Helper Tools
+
+#### Notify
+- **Purpose**: Stream output to multiple platforms
+- **Usage**: `echo "Alert!" | notify -provider slack`
+- **Features**: Multiple providers (Slack, Discord, Telegram), custom webhooks
+
+#### Interactsh
+- **Purpose**: OOB interaction gathering server and client
+- **Usage**: `interactsh-client`
+- **Features**: DNS/HTTP/SMTP interactions, SSRF detection
+
+#### CRLFuzz
+- **Purpose**: Fast CRLF injection scanner
+- **Usage**: `crlfuzz -u https://example.com`
+- **Features**: CRLF detection, header injection testing
+
+#### Qsreplace
+- **Purpose**: Query string parameter replacement
+- **Usage**: `cat urls.txt | qsreplace "FUZZ"`
+- **Features**: Parameter manipulation, fuzzing preparation
+
+#### Anew
+- **Purpose**: Append unique lines to files
+- **Usage**: `cat new.txt | anew existing.txt`
+- **Features**: Deduplication, append-only mode
+
+#### Unfurl
+- **Purpose**: URL parsing and extraction
+- **Usage**: `cat urls.txt | unfurl domains`
+- **Features**: Component extraction (domains, paths, params)
+
+### 🕷️ Advanced Web Crawling
+
+#### Hakrawler
+- **Purpose**: Fast web crawler for gathering URLs and JavaScript files
+- **Usage**: `echo "https://example.com" | hakrawler`
+- **Features**: JS file discovery, depth control, fast crawling
+
+#### Gauplus
+- **Purpose**: Enhanced version of gau with additional features
+- **Usage**: `echo "example.com" | gauplus`
+- **Features**: Multiple sources, filtering, enhanced output
+
+### 🔍 Subdomain Discovery (Advanced)
+
+#### GitHub Subdomains
+- **Purpose**: Find subdomains from GitHub
+- **Usage**: `github-subdomains -d example.com -t TOKEN`
+- **Features**: GitHub code search, token-based auth
+
+### 🌍 Network & Infrastructure
+
+#### Mapcidr
+- **Purpose**: Utility for manipulating CIDR ranges
+- **Usage**: `echo "192.168.1.0/24" | mapcidr`
+- **Features**: CIDR expansion, aggregation, filtering
+
+#### CDNCheck
+- **Purpose**: Identify CDN/WAF services
+- **Usage**: `echo "example.com" | cdncheck`
+- **Features**: CDN detection, WAF identification
+
+#### ASNmap
+- **Purpose**: ASN to CIDR lookup and enumeration
+- **Usage**: `asnmap -a AS15169`
+- **Features**: ASN enumeration, CIDR mapping, organization lookup
+
+---
+
+## 📋 Complete Tool List (55+ Tools)
+
+### Reconnaissance & Enumeration (15 tools)
+1. **Subfinder** - Subdomain discovery using passive sources
+2. **Sublister** - OSINT-based subdomain enumeration
+3. **Amass** - Network mapping and attack surface discovery
+4. **Assetfinder** - Find domains and subdomains
+5. **DNSx** - Fast DNS toolkit with multiple features
+6. **ShuffleDNS** - DNS bruteforcing wrapper
+7. **PureDNS** - Fast domain resolver and bruteforcer
+8. **Alterx** - Subdomain wordlist generator
+9. **GitHub Subdomains** - Find subdomains from GitHub
+10. **Shosubgo** - Shodan-based subdomain discovery
+11. **Chaos** - ProjectDiscovery's Chaos dataset
+12. **Uncover** - Multi-engine search (Shodan, Censys, Fofa)
+13. **ASNmap** - ASN to CIDR lookup
+14. **Mapcidr** - CIDR manipulation utility
+15. **Enum4linux** - SMB/Windows enumeration
+
+### Subdomain Takeover (2 tools)
+16. **Subzy** - Subdomain takeover vulnerability scanner
+17. **Subjack** - Subdomain takeover tool
+
+### HTTP Analysis & Probing (3 tools)
+18. **Httpx** - Fast HTTP toolkit with tech detection
+19. **TLSx** - TLS/SSL certificate analysis
+20. **CDNCheck** - CDN/WAF identification
+
+### Web Crawling & Spidering (4 tools)
+21. **Katana** - Next-generation web crawler
+22. **GoSpider** - Fast web spider
+23. **Hakrawler** - Fast URL and JS file gatherer
+24. **Waybackurls** - Fetch URLs from Wayback Machine
+25. **Gau** - Get All URLs from multiple sources
+26. **Gauplus** - Enhanced version of gau
+
+### Content Discovery (5 tools)
+27. **Ffuf** - Fast web fuzzer
+28. **Feroxbuster** - Fast content discovery
+29. **Dirsearch** - Web path scanner
+30. **Gobuster** - Directory/DNS/VHost bruteforcer
+31. **Dirb** - Web content scanner
+
+### Vulnerability Scanning (4 tools)
+32. **Nuclei** - Template-based vulnerability scanner
+33. **Nikto** - Web server scanner
+34. **DalFox** - XSS scanner and parameter analyzer
+35. **CRLFuzz** - CRLF injection scanner
+
+### Parameter Discovery (3 tools)
+36. **Arjun** - HTTP parameter discovery
+37. **ParamSpider** - Parameter mining from archives
+38. **Qsreplace** - Query string parameter replacement
+
+### Port Scanning (4 tools)
+39. **Nmap** - Network discovery and security auditing
+40. **Masscan** - High-speed port scanner
+41. **RustScan** - Modern fast port scanner
+42. **Naabu** - Fast port scanner in Go
+
+### Exploitation & Testing (4 tools)
+43. **SQLMap** - SQL injection detection and exploitation
+44. **Metasploit** - Penetration testing framework
+45. **Hydra** - Network logon cracker
+46. **John** - Password cracker
+
+### Specialized Tools (5 tools)
+47. **WPScan** - WordPress security scanner
+48. **Interactsh** - OOB interaction server
+49. **Notify** - Multi-platform notification tool
+50. **GF** - Wrapper around grep for patterns
+
+### Utility Tools (5 tools)
+51. **Anew** - Append unique lines to files
+52. **Unfurl** - URL parsing and extraction
+53. **Generic Command** - Execute any shell command
 
 ---
 
@@ -813,7 +1113,7 @@ Found a security vulnerability in the tool itself?
 - Provide detailed reproduction steps and impact assessment
 
 ### 📊 Project Stats
-- **25+ Security Tools** integrated
+- **55+ Security Tools** integrated
 - **3 AI Interface Methods** supported
 - **Cross-Platform** compatibility
 - **Active Development** and maintenance
@@ -831,7 +1131,8 @@ If you find this project useful, please consider giving it a star on GitHub!
 ## 🔄 Updates and Roadmap
 
 ### Recent Updates
-- ✅ Enhanced MCP server with 25+ security tools
+- ✅ Enhanced MCP server with 55+ security tools
+- ✅ Added 30+ new tools including DNSx, Naabu, TLSx, Uncover, and more
 - ✅ Direct Ollama integration
 - ✅ Comprehensive documentation
 - ✅ Automated installation script
@@ -856,3 +1157,4 @@ If you find this project useful, please consider giving it a star on GitHub!
 
 **🔗 Repository**: https://github.com/letchupkt/kali-mcp  
 **👨‍💻 Author**: LAKSHMIKANTHAN K (letchupkt)  
+**© 2024 LAKSHMIKANTHAN K (letchupkt) -  MCP Kali Server**
